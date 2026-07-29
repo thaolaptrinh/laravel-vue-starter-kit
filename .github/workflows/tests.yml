@@ -24,7 +24,7 @@ jobs:
         with:
           php-version: '8.5'
           tools: composer:v2
-          coverage: none
+          coverage: xdebug
 
       - name: Setup pnpm
         uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9

@@ -11,3 +11,8 @@ publicHoistPattern:
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@^0.2.6
   vitest: 4.1.10
+
+minimumReleaseAgeExclude:
+  - '@vueuse/core@14.4.0'
+  - '@vueuse/metadata@14.4.0'
+  - '@vueuse/shared@14.4.0'

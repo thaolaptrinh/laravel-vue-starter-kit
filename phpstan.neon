@@ -1,13 +1,18 @@
 includes:
     - vendor/larastan/larastan/extension.neon
     - vendor/nesbot/carbon/extension.neon
+    - phar://phpstan.phar/conf/bleedingEdge.neon
+    - vendor/mrpunyapal/peststan/extension.neon
 
 parameters:
     paths:
-        - app/
+        - app
         - bootstrap/app.php
-        - config/
-        - database/
-        - routes/
+        - config
+        - database
+        - public
+        - routes
 
-    level: 7
+    level: max
+
+    tmpDir: /tmp/phpstan
