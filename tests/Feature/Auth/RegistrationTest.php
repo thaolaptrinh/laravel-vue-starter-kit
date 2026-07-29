@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 use Laravel\Fortify\Features;
 
-beforeEach(function () {
+beforeEach(function (): void {
     $this->skipUnlessFortifyHas(Features::registration());
 });
 
-test('registration screen can be rendered', function () {
+test('registration screen can be rendered', function (): void {
     $response = $this->get(route('register'));
 
     $response->assertOk();
 });
 
-test('new users can register', function () {
+test('new users can register', function (): void {
     $response = $this->post(route('register.store'), [
         'name' => 'Test User',
         'email' => 'test@example.com',

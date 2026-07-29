@@ -8,14 +8,14 @@ use Illuminate\Auth\Middleware\RequirePassword;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function (): void {
     Route::redirect('settings', '/settings/profile');
 
     Route::get('settings/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('settings/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
-Route::middleware(['auth', 'verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function (): void {
     Route::delete('settings/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('settings/security', [SecurityController::class, 'edit'])
@@ -29,9 +29,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('settings/appearance', fn () => Inertia::render('settings/Appearance'))->name('appearance.edit');
 });
 
-Route::get('.well-known/passkey-endpoints', function () {
-    return response()->json([
-        'enroll' => route('security.edit'),
-        'manage' => route('security.edit'),
-    ]);
-})->name('well-known.passkeys');
+Route::get('.well-known/passkey-endpoints', fn () => response()->json([
+    'enroll' => route('security.edit'),
+    'manage' => route('security.edit'),
+]))->name('well-known.passkeys');

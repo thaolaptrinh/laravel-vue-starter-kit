@@ -23,6 +23,7 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - laravel/sail (SAIL) - v1
 - pestphp/pest (PEST) - v5
 - phpunit/phpunit (PHPUNIT) - v13
+- rector/rector (RECTOR) - v2
 - @inertiajs/vue3 (INERTIA_VUE) - v3
 - tailwindcss (TAILWINDCSS) - v4
 - vue (VUE) - v3

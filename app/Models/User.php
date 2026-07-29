@@ -33,7 +33,11 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 final class User extends Authenticatable implements PasskeyUser
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable;
+    use HasFactory;
+
+    use Notifiable;
+    use PasskeyAuthenticatable;
+    use TwoFactorAuthenticatable;
 
     /**
      * Get the attributes that should be cast.

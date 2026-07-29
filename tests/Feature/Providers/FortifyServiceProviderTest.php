@@ -3,18 +3,19 @@
 declare(strict_types=1);
 
 use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 
 function fortifyRateLimitRequestWithSession(array $parameters = []): Request
 {
     $request = Request::create('/', 'POST', $parameters);
-    $request->setLaravelSession(app('session.store'));
+    $request->setLaravelSession(resolve(Session::class));
 
     return $request;
 }
 
-test('two factor limiter uses the login session id', function () {
+test('two factor limiter uses the login session id', function (): void {
     $request = fortifyRateLimitRequestWithSession();
     $request->session()->put('login.id', 123);
 
@@ -26,7 +27,7 @@ test('two factor limiter uses the login session id', function () {
         ->and($limit->key)->toBe(123);
 });
 
-test('passkey limiter uses the credential id when present', function () {
+test('passkey limiter uses the credential id when present', function (): void {
     $request = fortifyRateLimitRequestWithSession(['credential' => ['id' => 'credential-id']]);
 
     $limit = RateLimiter::limiter('passkeys')($request);
@@ -37,7 +38,7 @@ test('passkey limiter uses the credential id when present', function () {
         ->and($limit->key)->toBe('credential-id|127.0.0.1');
 });
 
-test('passkey limiter falls back to the session id', function () {
+test('passkey limiter falls back to the session id', function (): void {
     $request = fortifyRateLimitRequestWithSession();
 
     $limit = RateLimiter::limiter('passkeys')($request);

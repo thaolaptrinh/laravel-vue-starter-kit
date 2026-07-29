@@ -18,6 +18,7 @@
         "laravel/wayfinder": "^0.1.20"
     },
     "require-dev": {
+        "driftingly/rector-laravel": "^2.5",
         "fakerphp/faker": "^1.24.1",
         "larastan/larastan": "^3.10",
         "laravel/boost": "^2.4.13",
@@ -27,10 +28,12 @@
         "laravel/sail": "^1.64",
         "mockery/mockery": "^1.6.12",
         "mrpunyapal/peststan": "^0.2.12",
+        "mrpunyapal/rector-pest": "^0.2.17",
         "nunomaduro/collision": "^8.9.5",
         "pestphp/pest": "^5.0.1",
         "pestphp/pest-plugin-laravel": "^5.0",
-        "pestphp/pest-plugin-type-coverage": "^5.0"
+        "pestphp/pest-plugin-type-coverage": "^5.0",
+        "rector/rector": "^2.5"
     },
     "autoload": {
         "psr-4": {
@@ -86,11 +89,13 @@
             "pnpm dlx npm-check-updates -u"
         ],
         "lint": [
+            "rector",
             "pint --parallel",
             "pnpm run lint"
         ],
         "test:lint": [
             "pint --parallel --test",
+            "rector --dry-run",
             "pnpm run test:lint"
         ],
         "test:type-coverage": "pest --type-coverage --min=100",
