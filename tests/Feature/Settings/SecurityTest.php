@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Inertia\Testing\AssertableInertia as Assert;
@@ -26,7 +28,8 @@ test('security page is displayed', function () {
             ->where('canManagePasskeys', true)
             ->where('passkeys', [])
             ->where('canManageTwoFactor', true)
-            ->where('twoFactorEnabled', false),
+            ->where('twoFactorEnabled', false)
+            ->where('requiresConfirmation', true),
         );
 });
 
@@ -64,6 +67,31 @@ test('security page renders without two factor when feature is disabled', functi
             ->where('canManageTwoFactor', false)
             ->missing('twoFactorEnabled')
             ->missing('requiresConfirmation'),
+        );
+});
+
+test('security page renders without passkeys when only two factor is enabled', function () {
+    $this->skipUnlessFortifyHas(Features::twoFactorAuthentication());
+
+    config(['fortify.features' => [
+        Features::twoFactorAuthentication([
+            'confirm' => true,
+            'confirmPassword' => true,
+        ]),
+    ]]);
+
+    $user = User::factory()->create();
+
+    $this->actingAs($user)
+        ->withSession(['auth.password_confirmed_at' => time()])
+        ->get(route('security.edit'))
+        ->assertOk()
+        ->assertInertia(fn (Assert $page) => $page
+            ->component('settings/Security')
+            ->where('canManagePasskeys', false)
+            ->where('passkeys', [])
+            ->where('canManageTwoFactor', true)
+            ->where('twoFactorEnabled', false),
         );
 });
 
