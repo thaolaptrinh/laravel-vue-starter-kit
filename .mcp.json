@@ -1,10 +1,9 @@
 {
     "mcpServers": {
         "laravel-boost": {
-            "command": "wsl.exe",
+            "command": "vendor/bin/sail",
             "args": [
-                "/usr/bin/php8.5",
-                "/home/thaonguyen/personal/laravel-vue-starter-kit/artisan",
+                "artisan",
                 "boost:mcp"
             ]
         }

@@ -15,34 +15,41 @@ This project uses Laravel, Vue 3 with the Composition API, TypeScript, Tailwind 
 - Tailwind CSS 4
 - Wayfinder for typed route and controller helpers
 - Fortify authentication with passkey and two-factor support
+- Laravel Sail with PostgreSQL and Redis for local development
 - Laravel Essentials for stricter application defaults
 - Pest, Larastan, Pint, Rector, and type coverage checks
 - Roave Security Advisories for Composer dependency safety
 
 ## Getting Started
 
-Install PHP and Node dependencies, configure the application, run migrations, and build frontend assets:
+Start the Sail containers:
 
 ```bash
-composer run setup
+vendor/bin/sail up -d
+```
+
+Install dependencies, configure the application, run migrations, and build frontend assets:
+
+```bash
+vendor/bin/sail composer run setup
 ```
 
 Start the development environment:
 
 ```bash
-composer run dev
+vendor/bin/sail composer run dev
 ```
 
 Run the full quality and test suite:
 
 ```bash
-composer test
+vendor/bin/sail composer test
 ```
 
 Run formatters and automated refactors:
 
 ```bash
-composer lint
+vendor/bin/sail composer lint
 ```
 
 ## Documentation
@@ -64,7 +71,7 @@ Thank you for considering contributing to this starter kit. Please keep changes 
 Before submitting changes, run:
 
 ```bash
-composer test
+vendor/bin/sail composer test
 ```
 
 ## Code of Conduct

@@ -5,9 +5,8 @@
             "type": "local",
             "enabled": true,
             "command": [
-                "wsl.exe",
-                "/usr/bin/php8.5",
-                "/home/thaonguyen/personal/laravel-vue-starter-kit/artisan",
+                "vendor/bin/sail",
+                "artisan",
                 "boost:mcp"
             ]
         }
