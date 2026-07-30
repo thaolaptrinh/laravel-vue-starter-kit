@@ -13,11 +13,13 @@ This project uses Laravel, Vue 3 with the Composition API, TypeScript, Tailwind 
 - Laravel 13 and PHP 8.5
 - Vue 3, TypeScript, and Inertia 3
 - Tailwind CSS 4
+- pnpm for JavaScript package management
 - Wayfinder for typed route and controller helpers
 - Fortify authentication with passkey and two-factor support
 - Laravel Sail with PostgreSQL and Redis for local development
 - Laravel Essentials for stricter application defaults
 - Pest, Larastan, Pint, Rector, and type coverage checks
+- Browser tests with Pest Plugin Browser and Playwright
 - Roave Security Advisories for Composer dependency safety
 
 ## Getting Started
@@ -50,6 +52,23 @@ Run formatters and automated refactors:
 
 ```bash
 vendor/bin/sail composer lint
+```
+
+### Browser Tests
+
+Browser tests drive real browsers via Playwright and live in `tests/Browser`.
+They are kept separate from the default `composer test` suite. After the first
+`vendor/bin/sail composer run setup` (which installs the `playwright` package),
+install the browser binaries once:
+
+```bash
+vendor/bin/sail npx playwright install chromium
+```
+
+Then run the browser suite:
+
+```bash
+vendor/bin/sail artisan test tests/Browser
 ```
 
 ## Documentation
