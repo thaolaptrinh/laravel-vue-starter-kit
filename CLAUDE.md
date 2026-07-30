@@ -219,3 +219,67 @@ Vue components must have a single root element.
 - IMPORTANT: Activate `inertia-vue-development` when working with Inertia Vue client-side patterns.
 
 </laravel-boost-guidelines>
+
+<app-guidelines>
+=== actions rules ===
+
+# App/Actions guidelines
+
+- This application uses the Action pattern and prefers for much logic to live in reusable and composable Action classes.
+- Actions live in `app/Actions`, they are named based on what they do, with no suffix.
+- Actions will be called from many different places: jobs, commands, HTTP requests, API requests, MCP requests, and more.
+- Create dedicated Action classes for business logic with a single `handle()` method.
+- Inject Action dependencies via the constructor using private properties when dependencies are required.
+- Actions without dependencies do not need a constructor and can define only the `handle()` method.
+- Prefer method injection when consuming Actions.
+- Inject Actions only into the methods where they are used.
+- Avoid constructor injection unless the Action is shared across multiple methods.
+- Resolve Actions through Laravel's service container rather than instantiating them manually with `new`.
+- Create new actions with `php artisan make:action "{name}" --no-interaction`
+- Wrap complex operations in `DB::transaction()` within actions when multiple models are involved.
+
+## Examples
+
+### Action class
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Actions;
+
+final readonly class CreateFavorite
+{
+    public function __construct(private FavoriteService $favorites)
+    {
+        //
+    }
+
+    public function handle(User $user, string $favorite): bool
+    {
+        return $this->favorites->add($user, $favorite);
+    }
+}
+```
+
+### Usage
+
+```php
+public function store(Request $request, CreateFavorite $createFavorite): RedirectResponse
+{
+    $createFavorite->handle(
+        $request->user(),
+        $request->string('favorite')->toString(),
+    );
+
+    return redirect()->back();
+}
+```
+
+=== general rules ===
+
+# General Guidelines
+
+- Don't include any superfluous PHP Annotations, except ones that start with `@` for typing variables.
+</app-guidelines>
