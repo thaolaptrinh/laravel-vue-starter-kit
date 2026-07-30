@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ae2b4d61015c1cd592dbb8f5f609f394",
+    "content-hash": "e8ee5bcaad923b90fafbd94d4e183cce",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -8857,139 +8857,6 @@
             "time": "2024-05-16T03:13:13+00:00"
         },
         {
-            "name": "mrpunyapal/peststan",
-            "version": "0.2.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MrPunyapal/PestStan.git",
-                "reference": "a18bf927fcff6dbb5ddb749e20b294486587b35c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MrPunyapal/PestStan/zipball/a18bf927fcff6dbb5ddb749e20b294486587b35c",
-                "reference": "a18bf927fcff6dbb5ddb749e20b294486587b35c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.2",
-                "phpstan/phpstan": "^2.0"
-            },
-            "require-dev": {
-                "laravel/pao": "^1.0",
-                "laravel/pint": "^1.18",
-                "mrpunyapal/rector-pest": "^0.2.0",
-                "pestphp/pest": "^3.0 || ^4.0 || ^5.0",
-                "phpstan/extension-installer": "^1.4",
-                "phpstan/phpstan-strict-rules": "^2.0",
-                "rector/rector": "^2.0"
-            },
-            "type": "phpstan-extension",
-            "extra": {
-                "phpstan": {
-                    "includes": [
-                        "extension.neon"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PestStan\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PHPStan extension for Pest PHP testing framework",
-            "keywords": [
-                "PHPStan",
-                "pest",
-                "static-analysis",
-                "testing"
-            ],
-            "support": {
-                "issues": "https://github.com/MrPunyapal/PestStan/issues",
-                "source": "https://github.com/MrPunyapal/PestStan/tree/0.2.12"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/mrpunyapal",
-                    "type": "github"
-                }
-            ],
-            "abandoned": "https://github.com/pestphp/pest-plugin-phpstan",
-            "time": "2026-07-17T19:10:40+00:00"
-        },
-        {
-            "name": "mrpunyapal/rector-pest",
-            "version": "0.2.17",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MrPunyapal/rector-pest.git",
-                "reference": "967b5fe54c524f24a616e6e65327cb4f30bf9486"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MrPunyapal/rector-pest/zipball/967b5fe54c524f24a616e6e65327cb4f30bf9486",
-                "reference": "967b5fe54c524f24a616e6e65327cb4f30bf9486",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.2",
-                "rector/rector": "^2.0",
-                "symplify/rule-doc-generator-contracts": "^11.2"
-            },
-            "require-dev": {
-                "laravel/pao": "^1.0",
-                "laravel/pint": "^1.18",
-                "mrpunyapal/peststan": "^0.2.5",
-                "pestphp/pest": "^3.0 || ^4.0",
-                "phpstan/phpstan": "^2.1",
-                "symplify/rule-doc-generator": "^12.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "RectorPest\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Punyapal Shah",
-                    "email": "mrpunyapal@gmail.com"
-                }
-            ],
-            "description": "Rector upgrade rules for Pest - refactoring and best practices for Pest testing framework",
-            "keywords": [
-                "ast",
-                "dev",
-                "instant-upgrades",
-                "pest",
-                "pestphp",
-                "phpunit",
-                "rector",
-                "refactoring",
-                "static-analysis",
-                "testing"
-            ],
-            "support": {
-                "issues": "https://github.com/MrPunyapal/rector-pest/issues",
-                "source": "https://github.com/MrPunyapal/rector-pest/tree/0.2.17"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/mrpunyapal",
-                    "type": "github"
-                }
-            ],
-            "abandoned": "https://github.com/pestphp/pest-plugin-rector",
-            "time": "2026-07-03T10:14:25+00:00"
-        },
-        {
             "name": "myclabs/deep-copy",
             "version": "1.13.4",
             "source": {
@@ -9644,6 +9511,97 @@
             "time": "2026-07-21T07:48:56+00:00"
         },
         {
+            "name": "pestphp/pest-plugin-phpstan",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pestphp/pest-plugin-phpstan.git",
+                "reference": "a1a7f29f9882b74df013298fee455cf0ab0b7dd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pestphp/pest-plugin-phpstan/zipball/a1a7f29f9882b74df013298fee455cf0ab0b7dd6",
+                "reference": "a1a7f29f9882b74df013298fee455cf0ab0b7dd6",
+                "shasum": ""
+            },
+            "require": {
+                "pestphp/pest": "^5.0.0",
+                "php": "^8.4",
+                "phpstan/phpstan": "^2.2.5"
+            },
+            "conflict": {
+                "pestphp/pest": "<5.0.0"
+            },
+            "require-dev": {
+                "laravel/pao": "^1.1.2",
+                "laravel/pint": "^1.29.3",
+                "pestphp/pest-plugin-rector": "^5.0",
+                "phpstan/extension-installer": "^1.4.3",
+                "phpstan/phpstan-strict-rules": "^2.0.12",
+                "rector/rector": "^2.5.7"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pest\\PHPStan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Punyapal Shah",
+                    "email": "mrpunyapal@gmail.com"
+                },
+                {
+                    "name": "Nuno Maduro",
+                    "email": "enunomaduro@gmail.com"
+                }
+            ],
+            "description": "PHPStan plugin for Pest",
+            "keywords": [
+                "PHPStan",
+                "framework",
+                "pest",
+                "php",
+                "plugin",
+                "test",
+                "testing",
+                "unit"
+            ],
+            "support": {
+                "source": "https://github.com/pestphp/pest-plugin-phpstan/tree/v5.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/mrpunyapal",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nunomaduro",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/nunomaduro",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2026-07-28T14:27:06+00:00"
+        },
+        {
             "name": "pestphp/pest-plugin-profanity",
             "version": "v5.0.0",
             "source": {
@@ -9701,6 +9659,90 @@
                 "source": "https://github.com/pestphp/pest-plugin-profanity/tree/v5.0.0"
             },
             "time": "2026-07-21T07:48:56+00:00"
+        },
+        {
+            "name": "pestphp/pest-plugin-rector",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pestphp/pest-plugin-rector.git",
+                "reference": "fe353125b8a7dadaddb70d2981501a430973c0b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pestphp/pest-plugin-rector/zipball/fe353125b8a7dadaddb70d2981501a430973c0b9",
+                "reference": "fe353125b8a7dadaddb70d2981501a430973c0b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.4",
+                "rector/rector": "^2.5.7",
+                "symplify/rule-doc-generator-contracts": "^11.2"
+            },
+            "conflict": {
+                "pestphp/pest": "<5.0.0"
+            },
+            "require-dev": {
+                "laravel/pao": "^1.1.2",
+                "laravel/pint": "^1.29.3",
+                "pestphp/pest": "^5.0.0",
+                "pestphp/pest-plugin-phpstan": "^5.0",
+                "phpstan/phpstan": "^2.2.5",
+                "symplify/rule-doc-generator": "^12.2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pest\\Rector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Punyapal Shah",
+                    "email": "mrpunyapal@gmail.com"
+                },
+                {
+                    "name": "Nuno Maduro",
+                    "email": "enunomaduro@gmail.com"
+                }
+            ],
+            "description": "Rector plugin for Pest",
+            "keywords": [
+                "framework",
+                "pest",
+                "php",
+                "plugin",
+                "rector",
+                "test",
+                "testing",
+                "unit"
+            ],
+            "support": {
+                "source": "https://github.com/pestphp/pest-plugin-rector/tree/v5.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/mrpunyapal",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nunomaduro",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/nunomaduro",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2026-07-28T14:27:10+00:00"
         },
         {
             "name": "pestphp/pest-plugin-type-coverage",

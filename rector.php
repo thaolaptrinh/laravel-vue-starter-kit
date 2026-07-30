@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Pest\Rector\Set\PestSetList;
 use Rector\Caching\ValueObject\Storage\FileCacheStorage;
 use Rector\CodingStyle\Rector\ClassMethod\MakeInheritedMethodVisibilitySameAsParentRector;
 use Rector\Config\RectorConfig;
@@ -11,8 +12,6 @@ use RectorLaravel\Rector\ClassMethod\AddGenericReturnTypeToRelationsRector;
 use RectorLaravel\Set\LaravelLevelSetList;
 use RectorLaravel\Set\LaravelSetList;
 use RectorLaravel\Set\LaravelSetProvider;
-use RectorPest\Set\PestLevelSetList;
-use RectorPest\Set\PestSetList;
 
 return RectorConfig::configure()
     ->withSetProviders(LaravelSetProvider::class)
@@ -30,9 +29,7 @@ return RectorConfig::configure()
         LaravelSetList::LARAVEL_LEGACY_FACTORIES_TO_CLASSES,
 
         // rector-pest
-        PestLevelSetList::UP_TO_PEST_40,
-        PestSetList::PEST_CODE_QUALITY,
-        PestSetList::PEST_CHAIN,
+        PestSetList::CODING_STYLE,
     ])
     ->withRules([
         AddGenericReturnTypeToRelationsRector::class,

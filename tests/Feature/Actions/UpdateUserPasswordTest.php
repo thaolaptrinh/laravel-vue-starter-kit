@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 test('updates the user password', function (): void {
     $user = User::factory()->create();
 
-    app(UpdateUserPassword::class)->handle($user, 'new-password');
+    resolve(UpdateUserPassword::class)->handle($user, 'new-password');
 
     expect(Hash::check('new-password', $user->refresh()->password))->toBeTrue();
 });

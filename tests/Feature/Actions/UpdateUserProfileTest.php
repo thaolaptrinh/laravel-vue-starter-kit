@@ -8,7 +8,7 @@ use App\Models\User;
 test('updates the user profile name and email', function (): void {
     $user = User::factory()->create();
 
-    app(UpdateUserProfile::class)->handle($user, [
+    resolve(UpdateUserProfile::class)->handle($user, [
         'name' => 'Jane Doe',
         'email' => 'jane@example.com',
     ]);
@@ -22,7 +22,7 @@ test('updates the user profile name and email', function (): void {
 test('resets email verification when the email address changes', function (): void {
     $user = User::factory()->create(['email_verified_at' => now()]);
 
-    app(UpdateUserProfile::class)->handle($user, [
+    resolve(UpdateUserProfile::class)->handle($user, [
         'name' => $user->name,
         'email' => 'new@example.com',
     ]);
@@ -33,7 +33,7 @@ test('resets email verification when the email address changes', function (): vo
 test('keeps email verification when the email address is unchanged', function (): void {
     $user = User::factory()->create(['email_verified_at' => now()]);
 
-    app(UpdateUserProfile::class)->handle($user, [
+    resolve(UpdateUserProfile::class)->handle($user, [
         'name' => 'New Name',
         'email' => $user->email,
     ]);
