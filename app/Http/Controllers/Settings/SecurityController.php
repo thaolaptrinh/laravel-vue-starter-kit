@@ -70,7 +70,7 @@ final class SecurityController extends Controller
 
         abort_unless($user instanceof User, 403);
 
-        $updateUserPassword->handle($user, $request->password);
+        $updateUserPassword->handle($user, $request->string('password')->value());
 
         Inertia::flash('toast', ['type' => 'success', 'message' => __('Password updated.')]);
 
