@@ -7,6 +7,7 @@
         "build:ssr": "vp build && vp build --ssr",
         "dev": "vp dev",
         "lint": "vp fmt resources/ && vp lint --fix",
+        "prepare": "vp config",
         "test:lint": "vp fmt --check resources/ && vp lint",
         "test:types": "vue-tsc --noEmit"
     },
