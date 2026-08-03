@@ -22,18 +22,6 @@ pest()->extend(TestCase::class)
 
 /*
 |--------------------------------------------------------------------------
-| Browser Suite
-|--------------------------------------------------------------------------
-|
-| Browser tests run real browsers via Playwright and are tagged with the
-| "browser" group so they can be run or skipped in isolation.
-|
-*/
-
-uses()->group('browser')->in('Browser');
-
-/*
-|--------------------------------------------------------------------------
 | Expectations
 |--------------------------------------------------------------------------
 |

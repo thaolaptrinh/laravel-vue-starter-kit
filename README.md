@@ -68,7 +68,7 @@ vendor/bin/sail npx playwright install chromium
 Then run the browser suite:
 
 ```bash
-vendor/bin/sail artisan test tests/Browser
+vendor/bin/sail composer test:browser
 ```
 
 ## Documentation

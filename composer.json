@@ -102,16 +102,19 @@
             "pnpm run test:lint"
         ],
         "test:type-coverage": "pest --type-coverage --min=100",
-        "test:unit": "XDEBUG_MODE=\"coverage\" pest --parallel --coverage --exactly=100.0",
         "test:types": [
             "phpstan analyse --memory-limit=-1",
             "pnpm run test:types"
         ],
+        "test:unit": "pest --testsuite=Unit --parallel",
+        "test:feature": "pest --testsuite=Feature --parallel",
+        "test:browser": "pest --testsuite=Browser --parallel",
+        "test:coverage": "XDEBUG_MODE=\"coverage\" pest --parallel --coverage --exactly=100.0 --exclude-testsuite=Browser",
         "test": [
             "@test:lint",
             "@test:type-coverage",
             "@test:types",
-            "@test:unit"
+            "@test:coverage"
         ],
         "ci:check": [
             "@test"
