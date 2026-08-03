@@ -9,7 +9,8 @@ publicHoistPattern:
   - '@inertiajs/core'
 
 overrides:
-  vite: npm:@voidzero-dev/vite-plus-core@^0.2.6
+  # Keep in step with vite-plus in package.json; a lower bound installs a second core copy.
+  vite: npm:@voidzero-dev/vite-plus-core@^0.2.7
   vitest: 4.1.10
 
 minimumReleaseAgeExclude:
