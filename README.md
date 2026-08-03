@@ -16,7 +16,7 @@ This project uses Laravel, Vue 3 with the Composition API, TypeScript, Tailwind 
 - pnpm for JavaScript package management
 - Wayfinder for typed route and controller helpers
 - Fortify authentication with passkey and two-factor support
-- Laravel Sail with PostgreSQL and Redis for local development
+- Laravel Sail with PostgreSQL, Redis, and Mailpit for local development
 - Laravel Essentials for stricter application defaults
 - Pest, Larastan, Pint, Rector, and type coverage checks
 - Browser tests with Pest Plugin Browser and Playwright
