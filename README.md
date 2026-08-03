@@ -57,15 +57,10 @@ vendor/bin/sail composer lint
 ### Browser Tests
 
 Browser tests drive real browsers via Playwright and live in `tests/Browser`.
-They are kept separate from the default `composer test` suite. After the first
-`vendor/bin/sail composer run setup` (which installs the `playwright` package),
-install the browser binaries once:
+They are kept separate from the default `composer test` suite, which never needs
+a browser binary.
 
-```bash
-vendor/bin/sail npx playwright install chromium
-```
-
-Then run the browser suite:
+Run the browser suite, which downloads Chromium on first use:
 
 ```bash
 vendor/bin/sail composer test:browser
